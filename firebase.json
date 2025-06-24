@@ -10,19 +10,21 @@
         "firebase-debug.*.log",
         "*.local"
       ],
-      "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint"
-      ]
+      "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run lint"]
     }
   ],
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
+      {
+        "source": "/pdfjs/**",
+        "destination": "/pdfjs/web/viewer.html"
+      },
+      {
+        "source": "/assets/**",
+        "destination": "/assets/archives/Regulamento_Abate.pdf"
+      },
       {
         "source": "**",
         "destination": "/index.html"
