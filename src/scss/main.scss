@@ -1,0 +1,27 @@
+// Variáveis
+$primary-color: #2c3e50;
+$breakpoint-mobile: 768px;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Estilos base
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+// Media queries
+@media (max-width: $breakpoint-mobile) {
+    // Estilos mobile
+}
