@@ -1,89 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clube de Tiro Paranaíba - MS</title>
+    <meta
+      name="description"
+      content="O melhor clube de tiro e pesca da região de Paranaíba, Mato Grosso do Sul. Oferecemos uma ampla gama de serviços, venha nos visitar!"
+    />
+    <meta
+      name="keywords"
+      content="clube de tiro, 
+      Paranaíba, MS, tiro esportivo, pesca, tiro ao alvo, eventos de tiro, Mato Grosso do Sul, cac, atirador esportivo, 
+      como tirar cac"
+    />
+    <meta name="author" content="Clube de Tiro Paranaíba" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Clube de Tiro Paranaíba - MS" />
+    <meta
+      property="og:description"
+      content="O melhor clube de tiro e pesca da região de Paranaíba, Mato Grosso do Sul"
+    />
+    <meta
+      property="og:image"
+      content="https://clubedetiroparanaiba.com.br/assets/images/logo-social.jpg"
+    />
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.9.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.9.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <header class="header">
+      <div class="container header-content">
+        <img src="assets/images/logo.jpg" alt="Logo do CTPB" class="logo" />
+        <div class="header-text">
+          <h1>Clube de Tiro Paranaíba - MS</h1>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a href="#inicio" class="nav-link">Início</a></li>
+              <li><a href="regulamentos.html" class="nav-link">Regulamentos</a></li>
+              <li><a href="#agenda" class="nav-link">Agenda</a></li>
+              <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <main class="main-content container">
+      <section id="agenda" class="section">
+        <h2 class="section-title">Agenda de Eventos</h2>
+        <p>Confira abaixo nossa agenda atualizada em PDF:</p>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+        <embed
+          src="assets/archives/agenda.pdf"
+          type="application/pdf"
+          class="pdf-embed"
+        />
+
+        <div class="btn-container">
+          <a
+            href="assets/archives/agenda.pdf"
+            download="Agenda_CTParanaiba.pdf"
+            class="btn"
+          >
+            Baixar Agenda
+          </a>
+        </div>
+      </section>
+
+      <section id="contato" class="section">
+        <h2 class="section-title">Informações de Contato</h2>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <strong>Endereço:</strong> Av. Três Lagoas, 2662 - SALA 01 - Centro,
+            Paranaíba - MS, 79500-000
+          </div>
+
+          <div class="contact-item">
+            <strong>Telefone:</strong> (67) 3669-4235
+          </div>
+
+          <div class="contact-item">
+            <strong>Celular/WhatsApp:</strong> (67) 98139-6432
+          </div>
+
+          <div class="contact-item">
+            <strong>E-mail:</strong> ctparanaiba@hotmail.com
+          </div>
+
+          <div class="contact-item">
+            <strong>Horário de Funcionamento:</strong> Segunda a Sexta, 07:00 às
+            18:00
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção do Mapa (descomente quando necessário) -->
+      <!--
+        <section id="mapa" class="section">
+            <h2 class="section-title">Localização</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1ddados!2d-51.191944!3d-19.6775" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localização do Clube de Tiro Paranaíba">
+                </iframe>
+            </div>
+        </section>
+        -->
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2025 Clube de Tiro Paranaíba. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Botão do WhatsApp (descomente quando necessário) -->
+    <!--
+    <a href="https://wa.me/5567981396432" class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+        <img src="assets/images/whatsapp-icon.png" alt="WhatsApp">
+    </a>
+    -->
+
+    <script src="assets/js/script.js" defer></script>
   </body>
 </html>

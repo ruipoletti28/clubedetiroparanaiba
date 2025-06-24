@@ -7,51 +7,44 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       
-      // Se for um link para outra página (.html), permite o comportamento padrão
+      // Se for um link para outra página (.html), permite o comportamento padrão SEM scroll
       if (href.includes('.html')) {
-        return; // Permite o navegador seguir o link normalmente
+        // Remove qualquer hash da URL antes de navegar
+        const cleanHref = href.split('#')[0];
+        window.location.href = cleanHref;
+        return;
       }
       
-      e.preventDefault(); // Só previne o comportamento padrão para links âncora
-      
-      // Restante do seu código para links âncora...
-      const linkText = this.textContent.trim();
-      let sectionId;
-      
-      switch(linkText.toLowerCase()) {
-        case 'home':
-          sectionId = 'header';
-          break;
-        case 'agenda':
-          sectionId = 'agenda';
-          break;
-        case 'serviços':
-          sectionId = 'servicos';
-          break;
-        case 'contato':
-          sectionId = 'contato-info';
-          break;
-        case 'regulamento abate':
-          sectionId = 'abate';
-          break;
-        case 'regulamento w2c':
-          sectionId = 'w2c';
-          break;
-        default:
-          sectionId = 'header';
-      }
-      
-      const targetSection = document.getElementById(sectionId);
-      
-      if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: 'smooth'
-        });
+      // Se for um link âncora (#), faz scroll suave
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
+        
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start' // Alinha ao topo da seção
+          });
+          
+          // Atualiza a URL sem recarregar a página
+          history.pushState(null, null, href);
+        }
+        return;
       }
     });
   });
-});
 
+  // Verifica se há hash na URL ao carregar a página
+  if (window.location.hash) {
+    const targetSection = document.querySelector(window.location.hash);
+    if (targetSection) {
+      // Scroll imediato (sem animação) no carregamento
+      setTimeout(() => {
+        targetSection.scrollIntoView();
+      }, 0);
+    }
+  }
+});
 // Modifique a navegação suave para ignorar links .html
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
