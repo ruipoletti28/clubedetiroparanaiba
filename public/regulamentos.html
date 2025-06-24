@@ -32,19 +32,19 @@
 
     <!-- Schema Markup (cole no <head>) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SportsClub",
-      "name": "Clube de Tiro Paranaíba",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Três Lagoas, 2662",
-        "addressLocality": "Paranaíba",
-        "addressRegion": "MS",
-        "postalCode": "79500-000"
-      },
-      "telephone": "(67) 3669-4235"
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsClub",
+        "name": "Clube de Tiro Paranaíba",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Três Lagoas, 2662",
+          "addressLocality": "Paranaíba",
+          "addressRegion": "MS",
+          "postalCode": "79500-000"
+        },
+        "telephone": "(67) 3669-4235"
+      }
     </script>
   </head>
   <body>
@@ -70,11 +70,12 @@
         <h2 class="section-title">Regulamento ABATE - 2025</h2>
         <p>Confira abaixo o Regulamento em PDF:</p>
 
-        <embed
-          src="assets/archives/Regulamento_Abate.pdf"
-          type="application/pdf"
-          class="pdf-embed"
-        />
+        <iframe
+          src="/pdfjs/web/viewer.html?file=/public/assets/archives/Regulamento_Abate.pdf"
+          width="100%"
+          height="800px"
+          style="border: none"
+        ></iframe>
 
         <div class="btn-container">
           <a
@@ -91,11 +92,12 @@
         <h2 class="section-title">Regulamento W2C - 2025</h2>
         <p>Confira abaixo o Regulamento em PDF:</p>
 
-        <embed
-          src="assets/archives/Regulamento_W2C.pdf"
-          type="application/pdf"
-          class="pdf-embed"
-        />
+        <iframe
+          src="/pdfjs/web/viewer.html?file=/public/assets/archives/Regulamento_W2C.pdf"
+          width="100%"
+          height="800px"
+          style="border: none"
+        ></iframe>
 
         <div class="btn-container">
           <a
@@ -108,7 +110,7 @@
         </div>
       </section>
 
-    <section id="contato" class="section">
+      <section id="contato" class="section">
         <h2 class="section-title">Informações de Contato</h2>
 
         <div class="contact-info">
@@ -130,7 +132,6 @@
           </div>
         </div>
       </section>
-     
     </main>
 
     <footer class="footer">
