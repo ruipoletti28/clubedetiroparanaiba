@@ -18,6 +18,14 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
+        "source": "/sitemap.xml",
+        "destination": "/sitemap.xml"
+      },
+      {
+        "source": "/robots.txt",
+        "destination": "/robots.txt"
+      },
+      {
         "source": "/pdfjs/**",
         "destination": "/pdfjs/web/viewer.html"
       },
