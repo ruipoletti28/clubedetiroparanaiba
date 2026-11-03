@@ -16,38 +16,31 @@
   "hosting": {
     "public": "public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
+    "redirects": [
       {
-        "source": "/sitemap.xml",
-        "destination": "/sitemap.xml"
+        "source": "/assets/archives/Regulamento_Abate.pdf",
+        "destination": "/regulamentos.html",
+        "type": 301
       },
       {
-        "source": "/robots.txt",
-        "destination": "/robots.txt"
+        "source": "/assets/archives/Regulamento_W2C.pdf",
+        "destination": "/regulamentos.html",
+        "type": 301
       },
+      {
+        "source": "/favicon.ico",
+        "destination": "/favicon.svg",
+        "type": 301
+      }
+    ],
+    "headers": [
       {
         "source": "/pdfjs/**",
-        "destination": "/pdfjs/web/viewer.html"
+        "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
       },
       {
-        "source": "/assets/**",
-        "destination": "/assets/archives/Regulamento_Tiro_Nacional_2026.pdf"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
-      },
-      {
-        "source": "!/assets/**",
-        "destination": "/index.html"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
-      },
-      {
-        "source": "/pdfjs/web/viewer.html",
-        "destination": "/pdfjs/web/viewer.html"
+        "source": "**/*.@(css|js|svg|jpg|png|woff2)",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
       }
     ]
   }
