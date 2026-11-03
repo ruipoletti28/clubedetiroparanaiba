@@ -31,7 +31,7 @@
       },
       {
         "source": "/assets/**",
-        "destination": "/assets/archives/Regulamento_Abate.pdf"
+        "destination": "/assets/archives/Regulamento_Tiro_Nacional_2026.pdf"
       },
       {
         "source": "**",
